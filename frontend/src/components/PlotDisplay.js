@@ -130,5 +130,4 @@ export default PlotDisplay;
 //Mikrofon -> Geräusche (erkennung von Tieren) -> Hochfrequenz?
 //Bodenfeuchtigkeit
 //Bodentermperatur
-//Kamera für Diebstahlschutz (Außenliegend)
 //Feinstaubsensor -> Waldbrandvorsorge
