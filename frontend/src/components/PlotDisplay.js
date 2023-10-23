@@ -17,6 +17,7 @@ function randomPres(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+//TODO: Change data to get from Endpoint
 export const data = {
     temp: { timestamp: '2023-10-20 23:40:24', value: randomTemp() },
     hum: { timestamp: '2023-10-20 23:40:24', value: randomHum() },
