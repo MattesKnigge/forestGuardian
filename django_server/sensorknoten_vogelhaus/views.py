@@ -9,15 +9,15 @@ from rest_framework.response import Response
 def get_location(request, location_name: str):
     data = {
         'temperature': {
-            'timestamp': datetime.datetime.now(),
+            'timestamp': datetime.datetime.now().strftime("%d.%m%Y %H:%M:%S"),
             'value': random.randint(-25, 42)
         },
         'humidity': {
-            'timestamp': datetime.datetime.now(),
+            'timestamp': datetime.datetime.now().strftime("%d.%m%Y %H:%M:%S"),
             'value': random.randint(0, 100)
         },
         'pressure': {
-            'timestamp': datetime.datetime.now(),
+            'timestamp': datetime.datetime.now().strftime("%d.%m%Y %H:%M:%S"),
             'value': random.randint(800, 1100)
         },
     }
