@@ -60,18 +60,19 @@ const customSegmentLabelsTemperature = [
 
 
 const PlotDisplay = () => {
-    const [data, setData] = useState({ temperature : { timestamp : "", value: "-25"}, humidity: { timestamp : "", value: "0"}, pressure: { timestamp : "", value: "800"}});    useEffect(() => {
+    const [data, setData] = useState({ temperature : { timestamp : "", value: "-25"}, humidity: { timestamp : "", value: "0"}, pressure: { timestamp : "", value: "800"}});
+    useEffect(() => {
         async function fetchData() {
             try {
                 const response = await axios.get("http://127.0.0.1:8000/sensorknoten-vogelhaus/test/");
                 console.dir(response );
-                setData(response );
+                setData(response.data);
             } catch (error) {
             }
         }
 
         fetchData();
-    }, [data]);
+    }, []);
 
     return (
         <div className="plot-display-content">
