@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
-//import { data } from "./PlotDisplay";
 import InfoDialog from "./InfoDialog";
 import QuestionMarkRoundedIcon from '@mui/icons-material/QuestionMarkRounded';
 import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 
-
 const Header = ({ data }) => {
+
     const [isInfoOpen, setIsInfoOpen] = useState(false);
 
     const buttonStyle = {
@@ -36,7 +35,7 @@ const Header = ({ data }) => {
 
     const fireIconStyle = {
         marginRight: '5%',
-        color: '#FBF9FF'
+        color: "white"
     };
 
     const handleRefreshClick = () => {
