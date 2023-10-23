@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Speedometer from 'react-d3-speedometer';
+import axios from "axios";
 
-function randomTemp(min, max) {
+
+/*function randomTemp(min, max) {
     min = Math.ceil(-25);
     max = Math.floor(42);
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -21,17 +23,13 @@ export const data = {
     temp: { timestamp: '2023-10-20 23:40:24', value: randomTemp() },
     hum: { timestamp: '2023-10-20 23:40:24', value: randomHum() },
     pres: { timestamp: '2023-10-20 23:40:24', value: randomPres() },
-};
+};*/
+
+
+
 
 // Function to format a timestamp as a normal date and time string
-function formatTimestamp(timestamp) {
-    const date = new Date(timestamp);
-    return date.toLocaleString();
-}
 
-const timestampTemp = formatTimestamp(data.temp.timestamp);
-const timestampHum = formatTimestamp(data.hum.timestamp);
-const timestampPres = formatTimestamp(data.pres.timestamp);
 
 
 const customSegmentLabelsPressure = [
@@ -61,14 +59,27 @@ const customSegmentLabelsTemperature = [
 
 
 const PlotDisplay = () => {
+    const [data, setData] = useState({ temperature : { timestamp : "", value: "-25"}, humidity: { timestamp : "", value: "0"}, pressure: { timestamp : "", value: "800"}});    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get("http://127.0.0.1:8000/sensorknoten-vogelhaus/test/");
+                console.dir(response );
+                setData(response );
+            } catch (error) {
+            }
+        }
+
+        fetchData();
+    }, [data]);
+
     return (
         <div className="plot-display-content">
-            <h1 style={{ textAlign: 'center' }}>Air Sensors {timestampTemp}</h1>
+            <h1 style={{ textAlign: 'center' }}>Air Sensors {data.temperature.timestamp}</h1>
             <div className="gauge-container">
                 <div className="gauge-item temp">
                     <h3>Temperature</h3>
                     <Speedometer
-                        value={data.temp.value}
+                        value={data.temperature.value}
                         currentValueText="#{value} °C"
                         currentValuePlaceholderStyle={'#{value}'}
                         minValue={-25}
@@ -86,7 +97,7 @@ const PlotDisplay = () => {
                     <div className="gauge-item hum">
                         <h3>Humidity</h3>
                         <Speedometer
-                            value={data.hum.value}
+                            value={data.humidity.value}
                             currentValueText="#{value} %"
                             currentValuePlaceholderStyle={'#{value}'}
                             minValue={0}
@@ -103,7 +114,7 @@ const PlotDisplay = () => {
                     <div className="gauge-item pres">
                         <h3>Pressure</h3>
                         <Speedometer
-                            value={data.pres.value}
+                            value={data.pressure.value}
                             currentValueText="#{value} hPa"
                             currentValuePlaceholderStyle={'#{value}'}
                             minValue={800}

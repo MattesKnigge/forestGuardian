@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import IconButton from '@mui/material/IconButton';
-import RefreshIcon from '@mui/icons-material/Refresh';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
-import { data } from "./PlotDisplay";
+//import { data } from "./PlotDisplay";
 import InfoDialog from "./InfoDialog";
 import QuestionMarkRoundedIcon from '@mui/icons-material/QuestionMarkRounded';
 import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 
-const daten = { data };
 
 const Header = ({ data }) => {
     const [isInfoOpen, setIsInfoOpen] = useState(false);
@@ -17,7 +15,7 @@ const Header = ({ data }) => {
         marginLeft: '15%',
         borderRadius: '25%',
     };
-    const butonContainerStyle = {
+    const buttonContainerStyle = {
         display: 'flex',
         alignItems: 'center',
         marginLeft: '25%',
@@ -36,18 +34,9 @@ const Header = ({ data }) => {
         marginLeft: '-35%',
     };
 
-    const fireIconStyle_1 = {
+    const fireIconStyle = {
         marginRight: '5%',
-        color: daten.data.temp.value >= 25 ? 'orange' : 'white',
-    };
-
-    const fireIconStyle_2 = {
-        marginRight: '5%',
-        color: daten.data.temp.value >= 30 ? 'orange' : 'white',
-    };
-
-    const fireIconStyle_3 = {
-        color: daten.data.temp.value >= 35 ? 'orange' : 'white',
+        color: '#FBF9FF'
     };
 
     const handleRefreshClick = () => {
@@ -83,11 +72,11 @@ const Header = ({ data }) => {
             </div>
             <div className="header-button">
                 <div style={iconsContainerStyle}>
-                    <LocalFireDepartmentIcon style={fireIconStyle_1} />
-                    <LocalFireDepartmentIcon style={fireIconStyle_2} />
-                    <LocalFireDepartmentIcon style={fireIconStyle_3} />
+                    <LocalFireDepartmentIcon style={fireIconStyle} />
+                    <LocalFireDepartmentIcon style={fireIconStyle} />
+                    <LocalFireDepartmentIcon style={fireIconStyle} />
                 </div>
-                    <div style={butonContainerStyle}>
+                    <div style={buttonContainerStyle}>
                 <IconButton style={buttonStyle} onClick={handleRefreshClick}>
                     <RefreshRoundedIcon />
                 </IconButton>
