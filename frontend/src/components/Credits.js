@@ -41,7 +41,9 @@ const Credits = () => {
                     <label> </label>
                     <span
                     >
-                        <a href="https://5g-smart-country.de" target="_blank" rel="noreferrer">5G Smart Country</a>
+                        <a className="country" href="https://5g-smart-country.de" target="_blank" rel="noreferrer"
+                        >5G Smart Country
+                        </a>
                     </span>
                     <label> | 2023</label>
                 </p>

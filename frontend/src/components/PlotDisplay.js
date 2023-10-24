@@ -21,8 +21,10 @@ const PlotDisplay = () => {
 
     return (
         <div className="plot-display-content">
+            <div className="headline-plot">
             <h1 style={{ textAlign: 'center' }}>Air Sensors {data.temperature.timestamp}</h1>
-            <div className="gauge-container">
+            </div>
+                <div className="gauge-container">
                 <div className="gauge-item temp">
                     <h3>Temperature</h3>
                     <Speedometer
@@ -36,7 +38,7 @@ const PlotDisplay = () => {
                         segments={8}
                         width={400}
                         customSegmentLabels={[{}, {}, {}, {}, {}, {}, {}, {},]}
-                        textColor={"black"}
+                        textColor={"#353535"}
                     />
 
                 </div>
@@ -55,7 +57,7 @@ const PlotDisplay = () => {
                             segments={6}
                             customSegmentLabels={[{}, {}, {}, {}, {}, {},]}
                             segmentColors={["#8f0000", "red", "orange", "green", "green", "green"]}
-                            textColor={"black"}
+                            textColor={"#353535"}
                         />
                     </div>
                     <div className="gauge-item pres">
@@ -72,7 +74,7 @@ const PlotDisplay = () => {
                             segments={3}
                             customSegmentLabels={[{},{},{},]}
                             segmentColors={["red", "orange", "green"]}
-                            textColor={"black"}
+                            textColor={"#353535"}
                         />
                     </div>
                 </div>
@@ -82,6 +84,9 @@ const PlotDisplay = () => {
 };
 
 export default PlotDisplay;
+
+//TODO: Add folowing data to display
+//TODO: If sensors not available dont show data
 //Windgeschwindigkeit in km/h bzw. stärke
 // Niederschlag -> Wann/Wie viel
 //Windrichtung

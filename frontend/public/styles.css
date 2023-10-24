@@ -1,7 +1,7 @@
 /* Body styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #D9D9D9;
     margin: 0;
     padding: 0;
 }
@@ -9,12 +9,13 @@ body {
 /* Header styles */
 .header {
     background-color: #6c5b7b;
-    color: #ffffff;
-    padding: 1rem;
+    padding: 0.5vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    height: 5vh;
+    width: 100vw;
+
 }
 
 .header-content {
@@ -23,10 +24,10 @@ body {
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 1vw;
     margin: 0;
     font-family: 'Outfit', cursive;
-    color: #f0f0f0;
+    color: #D9D9D9;
 }
 
 /* Button styles */
@@ -35,60 +36,58 @@ header h1 {
 }
 
 /* PlotDisplay styles */
-.plot-display {
-    background-color: #e2a4c8;
-    padding: 2rem;
-    margin: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.plot-display h2 {
-    font-size: 1.5rem;
+.headline-plot {
+    font-size: 1vw;
     margin: 0;
-    color: #333;
+    color: #353535;
+    cursor: default;
+
+}
+.gauge-container{
+    font-size: 1vw;
+    cursor: default;
 }
 
-/* Loading circle styles */
-.loading-circle {
-    display: flex;
-    align-items: center;
-    margin-left: 1rem;
-    color: #6c5b7b;
-}
-.hidden {
-    display: none;
-}
 /* Credits styles */
 .credits-container {
-    color: #333333;
-    padding: 1rem;
+    color: #353535;
+    padding: 1vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: 0;
+    bottom: -2.5vw;
     left: 0;
     right: 0;
     height: 100px;
+    font-size: 1vw;
+    cursor: default;
 }
 
 .credits-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    padding: 0 1rem;
+    width: 100vw;
+    padding: 1rem;
+    color: #353535;
 }
 
 .credit-link {
-    color: #333333;
+    color: #353535;
     text-decoration: none;
     transition: text-decoration 0.3s, color 0.3s, cursor 0.3s;
+    cursor: pointer;
+}
+
+.country {
+    text-decoration: none;
+    color: inherit;
+}
+
+.country:hover {
+    text-decoration: underline;
     cursor: pointer;
 }
 

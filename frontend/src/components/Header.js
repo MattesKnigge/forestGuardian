@@ -11,7 +11,7 @@ const Header = ({ data }) => {
 
     const buttonStyle = {
         backgroundColor: '#e2a4c8',
-        marginLeft: '15%',
+        marginLeft: '1vw',
         borderRadius: '25%',
     };
     const buttonContainerStyle = {
@@ -25,6 +25,7 @@ const Header = ({ data }) => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        cursor: "default"
     };
 
     const iconsContainerStyle = {
@@ -35,7 +36,9 @@ const Header = ({ data }) => {
 
     const fireIconStyle = {
         marginRight: '5%',
-        color: "white"
+        color: "#D9D9D9",
+        //TODO: Change color according to temperature
+        //maybe look up correlation for all three values
     };
 
     const handleRefreshClick = () => {
@@ -51,10 +54,10 @@ const Header = ({ data }) => {
     };
 
     const titleStyle = {
-        fontSize: '38px',
+        fontSize: '3.5vh',
         fontFamily: 'Outfit, sans-serif',
         color: '#e2a4c8',
-        marginRight: '5%',
+        marginRight: '1vw',
         alignItems: 'center',
     };
 
@@ -65,8 +68,8 @@ const Header = ({ data }) => {
                 <img
                     src="/birdhouse.svg"
                     alt="Birdhouse"
-                    width="40"
-                    height="40"
+                    width="35vw"
+                    height="35vh"
                 />
             </div>
             <div className="header-button">
