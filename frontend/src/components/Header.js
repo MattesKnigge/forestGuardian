@@ -10,7 +10,7 @@ const Header = ({ data }) => {
     const [isInfoOpen, setIsInfoOpen] = useState(false);
 
     const buttonStyle = {
-        backgroundColor: '#e2a4c8',
+        backgroundColor: '#537A5A',
         marginLeft: '1vw',
         borderRadius: '25%',
     };
@@ -36,9 +36,9 @@ const Header = ({ data }) => {
 
     const fireIconStyle = {
         marginRight: '5%',
-        color: "#D9D9D9",
+        color: "#C36F09",
         //TODO: Change color according to temperature
-        //maybe look up correlation for all three values
+        //maybe look up correlation for all three values | Fire Color: #C36F09
     };
 
     const handleRefreshClick = () => {
@@ -56,7 +56,7 @@ const Header = ({ data }) => {
     const titleStyle = {
         fontSize: '3.5vh',
         fontFamily: 'Outfit, sans-serif',
-        color: '#e2a4c8',
+        color: '#537A5A',
         marginRight: '1vw',
         alignItems: 'center',
     };
