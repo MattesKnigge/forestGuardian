@@ -1,4 +1,3 @@
-// InfoDialog.js
 import React from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -9,28 +8,45 @@ import Button from '@mui/material/Button';
 const InfoDialog = ({ open, onClose }) => {
     return (
         <Dialog open={open} onClose={onClose}>
-            <DialogTitle>Info</DialogTitle>
+            <DialogTitle style={styles.title}>Welcome to ForestGuardian</DialogTitle>
             <DialogContent>
-                <p>
-                    <strong>ForestGuardian is a monitoring system that provides data on various environmental conditions.</strong>
+                <p style={styles.paragraph}>
+                    <strong>ForestGuardian</strong> is an advanced environmental monitoring system, designed to provide invaluable insights into our natural world.
                 </p>
-                <p>
-                    <strong>Wildfire Indicator:</strong> The Icons change with the temperature. The color of the icon changes to orange if the temperature is above 30°C, 35°C or 40°C.
+                <p style={styles.paragraph}>
+                    Explore the following features:
                 </p>
-                <p>
-                    <strong>Refresh:</strong> Clicking this button will refresh the data.
-                </p>
-                <p>
-                    <strong>Info:</strong> Clicking this button opens this information dialog.
-                </p>
+                <ul style={styles.featuresList}>
+                    <li><strong>Refresh:</strong> Keep your data up-to-date with a single click. The latest information is always at your fingertips.</li>
+                    <li><strong>Info:</strong> Dive deeper into the system's capabilities by clicking the "Info" button and discover more about its functionalities.</li>
+                </ul>
             </DialogContent>
             <DialogActions>
-                <Button onClick={onClose} color="primary">
+                <Button onClick={onClose} color="primary" style={styles.closeButton}>
                     Close
                 </Button>
             </DialogActions>
         </Dialog>
     );
+};
+
+const styles = {
+    title: {
+        fontSize: '24px',
+        fontWeight: 'bold',
+    },
+    paragraph: {
+        margin: '16px 0',
+    },
+    featuresList: {
+        listStyleType: 'disc',
+        marginLeft: '24px',
+        marginTop: '8px',
+    },
+    closeButton: {
+        color: '#1E1F1E',
+        backgroundColor: '#537A5A',
+    },
 };
 
 export default InfoDialog;

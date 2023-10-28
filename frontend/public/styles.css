@@ -38,12 +38,20 @@ header h1 {
 
 /* PlotDisplay styles */
 .headline-plot {
-    font-size: 1vw;
+    font-size: 2vw;
     margin: 0;
     color: #537A5A;
     cursor: default;
 
 }
+
+.sensor-name {
+    font-size: 2vw;
+    margin: 0;
+    color: #537A5A;
+    cursor: default;
+}
+
 .gauge-container{
     font-size: 1vw;
     cursor: default;
