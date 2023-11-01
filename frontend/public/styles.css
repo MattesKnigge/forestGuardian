@@ -1,34 +1,30 @@
-/* Body styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1E1F1E;
+/* Reset default styles */
+body, h1, p {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+}
+
+/* Body styles */
+body {
+    font-family: Dosis, sans-serif;
+    background-color: #1E1F1E;
+    overflow: auto;
 }
 
 /* Header styles */
 .header {
     background-color: #484A47;
-    padding: 0.5vh;
+    padding: 1vh 2vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 5vh;
-    width: 100vw;
-
+    height: 3rem;
 }
 
-.header-content {
-    display: flex;
-    align-items: center;
-}
-
-header h1 {
-    font-size: 1vw;
-    margin: 0;
-    font-family: 'Outfit', cursive;
-    color: #537A5A;
+.header h1 {
+    font-size: .5vw;
+    font-family: Dosis, sans-serif;
+    color: black;
 }
 
 /* Button styles */
@@ -37,24 +33,45 @@ header h1 {
 }
 
 /* PlotDisplay styles */
-.headline-plot {
+.headline-plot, .sensor-name {
     font-size: 2vw;
     margin: 0;
     color: #537A5A;
     cursor: default;
-
+    font-family: Dosis, sans-serif;
 }
 
-.sensor-name {
-    font-size: 2vw;
-    margin: 0;
-    color: #537A5A;
-    cursor: default;
-}
-
-.gauge-container{
+.gauge-container {
     font-size: 1vw;
     cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: Dosis, sans-serif;
+}
+
+.gauge-item, .temp, .hum, .pres {
+    margin: 10px;
+}
+
+.temp {
+    width: 600px;
+    height: 400px;
+    margin-bottom: -150px;
+}
+
+.hum-pres {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hum, .pres {
+    width: 400px;
+    height: 240px;
 }
 
 /* Credits styles */
@@ -66,7 +83,7 @@ header h1 {
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: -2.5vw;
+    bottom: 0;
     left: 0;
     right: 0;
     height: 10vh;
@@ -75,71 +92,37 @@ header h1 {
 }
 
 .credits-content {
+    font-family: Bebas Neue, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     padding: 2rem;
     color: #484A47;
 }
 
-.credit-link {
+.credit-link, .country {
     color: #484A47;
     text-decoration: none;
     transition: text-decoration 0.3s, color 0.3s, cursor 0.3s;
     cursor: pointer;
 }
 
-.country {
-    text-decoration: none;
-    color: inherit;
-}
-
-.country:hover {
+.credit-link:hover, .country:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.credit-link:hover {
-    text-decoration: underline;
-    cursor: pointer;
+/* Media queries for smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+    .gauge-item, .temp, .hum, .pres {
+        width: 300px; /* Make gauges smaller on mobile screens */
+        height: 150px;
+        margin: 10% auto; /* Center the gauges horizontally on mobile screens */
+    }
+    body {
+        font-family: Dosis, sans-serif;
+        background-color: #1E1F1E;
+        overflow: auto;
+    }
 }
-
-.gauge-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.gauge-item {
-    margin: 10px;
-    width: 300px;
-    height: 180px;
-}
-
-.temp {
-    width: 600px;
-    height: 400px;
-}
-
-.hum-pres {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.hum,
-.pres {
-    margin: 10px;
-    width: 400px;
-    height: 240px;
-}
-
-
-
-
-
-

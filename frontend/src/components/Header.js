@@ -6,26 +6,29 @@ import QuestionMarkRoundedIcon from '@mui/icons-material/QuestionMarkRounded';
 import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 
 const Header = ({ data }) => {
-
     const [isInfoOpen, setIsInfoOpen] = useState(false);
 
     const buttonStyle = {
         backgroundColor: '#537A5A',
-        marginLeft: '1vw',
-        borderRadius: '25%',
+        marginLeft: '.5rem',
+        borderRadius: '20%',
+        color: '#353734',
+        padding: '1vmin',
     };
+
     const buttonContainerStyle = {
         display: 'flex',
         alignItems: 'center',
         marginLeft: '25%',
-    }
+        marginRight: '-1vw',
+    };
 
     const headerStyle = {
         fontFamily: 'Arial, sans-serif',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        cursor: "default"
+        cursor: 'default',
     };
 
     const iconsContainerStyle = {
@@ -36,9 +39,10 @@ const Header = ({ data }) => {
 
     const fireIconStyle = {
         marginRight: '5%',
-        color: "#C36F09",
-        //TODO: Change color according to temperature
-        //maybe look up correlation for all three values | Fire Color: #C36F09
+        color: '#C36F09',
+        fontSize: '3vmin',
+        // TODO: Change color according to temperature
+        // maybe look up correlation for all three values | Fire Color: #C36F09
     };
 
     const handleRefreshClick = () => {
@@ -54,23 +58,17 @@ const Header = ({ data }) => {
     };
 
     const titleStyle = {
-        fontSize: '3.5vh',
-        fontFamily: 'Outfit, sans-serif',
+        fontSize: '5vmin',
         color: '#537A5A',
-        marginRight: '1vw',
+        display: 'flex',
         alignItems: 'center',
+        marginLeft: '-1%',
     };
 
     return (
         <header className="header" style={headerStyle}>
             <div className="header-content">
                 <h1 style={titleStyle}>ForestGuardian</h1>
-                <img
-                    src="/birdhouse.svg"
-                    alt="Birdhouse"
-                    width="35vw"
-                    height="35vh"
-                />
             </div>
             <div className="header-button">
                 <div style={iconsContainerStyle}>
@@ -78,14 +76,14 @@ const Header = ({ data }) => {
                     <LocalFireDepartmentIcon style={fireIconStyle} />
                     <LocalFireDepartmentIcon style={fireIconStyle} />
                 </div>
-                    <div style={buttonContainerStyle}>
-                <IconButton style={buttonStyle} onClick={handleRefreshClick}>
-                    <RefreshRoundedIcon />
-                </IconButton>
-                <IconButton style={buttonStyle} onClick={handleInfoClick}>
-                    <QuestionMarkRoundedIcon  />
-                </IconButton>
-                    </div>
+                <div style={buttonContainerStyle}>
+                    <IconButton style={buttonStyle} onClick={handleRefreshClick}>
+                        <RefreshRoundedIcon />
+                    </IconButton>
+                    <IconButton style={buttonStyle} onClick={handleInfoClick}>
+                        <QuestionMarkRoundedIcon />
+                    </IconButton>
+                </div>
             </div>
             <InfoDialog open={isInfoOpen} onClose={handleCloseInfo} />
         </header>
