@@ -44,7 +44,6 @@ const PlotDisplay = () => {
         customSegmentLabels: Array(segments).fill({}),
         segmentColors,
         textColor: '#537A5A',
-
     });
 
     return (

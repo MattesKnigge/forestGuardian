@@ -19,8 +19,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 3rem;
-    /* TODO: Fix displaying so that there are no gaps */
+    height: 3.5rem;
+    box-sizing: border-box;
 }
 
 .header h1 {
@@ -28,9 +28,6 @@ body {
     font-size: 3rem;
 }
 
-.fireIconStyle {
-    font-size: 2rem;
-}
 
 /* Button styles */
 .header-button {
@@ -39,14 +36,14 @@ body {
 
 /* PlotDisplay styles */
 .headline-plot {
-    font-size: 3vw;
+    font-size: 1rem;
     margin: 0;
     color: #537A5A;
     cursor: default;
     font-family: Dosis, sans-serif;
 }
 .sensor-name {
-    font-size: 2vw;
+    font-size: 1rem;
     margin: 0;
     color: #537A5A;
     cursor: default;
@@ -54,7 +51,7 @@ body {
 }
 
 .gauge-container {
-    font-size: 1vw;
+    font-size: 1rem;
     cursor: default;
     display: flex;
     justify-content: center;
@@ -69,7 +66,7 @@ body {
 }
 
 .temp {
-    width: 600px;
+    width: 400px;
     height: 400px;
     margin-bottom: -150px;
 }
@@ -82,23 +79,19 @@ body {
 }
 
 .hum, .pres {
-    width: 400px;
-    height: 240px;
+    height: 280px;
 }
 
 /* Credits styles */
 .credits-container {
     color: #484A47;
-    padding: 1vw;
+    padding: .5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 10vh;
+    height: 5vh;
     font-size: 1rem;
     cursor: default;
 }
@@ -111,6 +104,7 @@ body {
     width: 100%;
     padding: 2rem;
     color: #484A47;
+    box-sizing: border-box;
 }
 
 .credit-link, .country {
@@ -125,23 +119,24 @@ body {
     cursor: pointer;
 }
 
-/* Media queries for smaller screens (e.g., mobile devices) */
+/* Media queries for smaller screens */
 @media (max-width: 768px) {
     .gauge-item, .temp, .hum, .pres {
-        width: 300px; /* Make gauges smaller on mobile screens */
+        width: 300px;
         height: 150px;
-        margin: 10% auto; /* Center the gauges horizontally on mobile screens */
+        margin: 10% auto;
     }
     body {
         font-family: Dosis, sans-serif;
         background-color: #1E1F1E;
-        overflow: auto;
+        overflow-y: auto;
     }
+
     .credits-container {
         color: #484A47;
-        display: flex;
+        display: compact;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         position: relative;
         font-size: 0.4rem;
@@ -152,7 +147,7 @@ body {
     }
 
     .headline-plot {
-        font-size: rem;
+        font-size: 1rem;
         margin: 0;
         color: #537A5A;
         cursor: default;
