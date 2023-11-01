@@ -8,7 +8,8 @@ body, h1, p {
 body {
     font-family: Dosis, sans-serif;
     background-color: #1E1F1E;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* Header styles */
@@ -19,12 +20,16 @@ body {
     justify-content: center;
     align-items: center;
     height: 3rem;
+    /* TODO: Fix displaying so that there are no gaps */
 }
 
 .header h1 {
-    font-size: .5vw;
     font-family: Dosis, sans-serif;
-    color: black;
+    font-size: 3rem;
+}
+
+.fireIconStyle {
+    font-size: 2rem;
 }
 
 /* Button styles */
@@ -33,7 +38,14 @@ body {
 }
 
 /* PlotDisplay styles */
-.headline-plot, .sensor-name {
+.headline-plot {
+    font-size: 3vw;
+    margin: 0;
+    color: #537A5A;
+    cursor: default;
+    font-family: Dosis, sans-serif;
+}
+.sensor-name {
     font-size: 2vw;
     margin: 0;
     color: #537A5A;
@@ -82,12 +94,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
     height: 10vh;
-    font-size: 1vw;
+    font-size: 1rem;
     cursor: default;
 }
 
@@ -125,4 +137,33 @@ body {
         background-color: #1E1F1E;
         overflow: auto;
     }
+    .credits-container {
+        color: #484A47;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        font-size: 0.4rem;
+        cursor: default;
+    }
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .headline-plot {
+        font-size: rem;
+        margin: 0;
+        color: #537A5A;
+        cursor: default;
+        font-family: Dosis, sans-serif;
+    }
+    .sensor-name {
+        font-size: 1rem;
+        margin: 0;
+        color: #537A5A;
+        cursor: default;
+        font-family: Dosis, sans-serif;
+    }
+
 }
