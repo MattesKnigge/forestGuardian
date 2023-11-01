@@ -7,14 +7,14 @@ body, h1, p {
 /* Body styles */
 body {
     font-family: Dosis, sans-serif;
-    background-color: #1E1F1E;
+    background-color: #1C352E;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 /* Header styles */
 .header {
-    background-color: #484A47;
+    background-color: #D4A82B;
     padding: 1vh 2vw;
     display: flex;
     justify-content: center;
@@ -38,14 +38,14 @@ body {
 .headline-plot {
     font-size: 1rem;
     margin: 0;
-    color: #537A5A;
+    color: #91A799;
     cursor: default;
     font-family: Dosis, sans-serif;
 }
 .sensor-name {
     font-size: 1rem;
     margin: 0;
-    color: #537A5A;
+    color: #91A799;
     cursor: default;
     font-family: Dosis, sans-serif;
 }
@@ -84,7 +84,6 @@ body {
 
 /* Credits styles */
 .credits-container {
-    color: #484A47;
     padding: .5rem;
     display: flex;
     flex-direction: column;
@@ -103,12 +102,12 @@ body {
     align-items: center;
     width: 100%;
     padding: 2rem;
-    color: #484A47;
+    color: #8E6F52;
     box-sizing: border-box;
 }
 
 .credit-link, .country {
-    color: #484A47;
+    color: #8E6F52;
     text-decoration: none;
     transition: text-decoration 0.3s, color 0.3s, cursor 0.3s;
     cursor: pointer;
@@ -128,7 +127,7 @@ body {
     }
     body {
         font-family: Dosis, sans-serif;
-        background-color: #1E1F1E;
+        background-color: #1C352E;
         overflow-y: auto;
     }
 
@@ -149,14 +148,14 @@ body {
     .headline-plot {
         font-size: 1rem;
         margin: 0;
-        color: #537A5A;
+        color: #91A799;
         cursor: default;
         font-family: Dosis, sans-serif;
     }
     .sensor-name {
         font-size: 1rem;
         margin: 0;
-        color: #537A5A;
+        color: #91A799;
         cursor: default;
         font-family: Dosis, sans-serif;
     }

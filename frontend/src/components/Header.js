@@ -8,11 +8,16 @@ const Header = ({ data }) => {
     const [isInfoOpen, setIsInfoOpen] = useState(false);
 
     const buttonStyle = {
-        backgroundColor: '#537A5A',
+        backgroundColor: '#8E6F52',
         marginLeft: '.5rem',
         borderRadius: '20%',
-        color: '#353734',
+        color: '#333333',
         padding: '.5rem',
+        transition: 'background-color 0.3s, transform 0.2s',
+        '&:hover': {
+            backgroundColor: '#6E4A33',
+            transform: 'scale(0.95) rotate(10deg)',
+        },
     };
 
     const buttonContainerStyle = {
@@ -41,7 +46,7 @@ const Header = ({ data }) => {
     };
 
     const titleStyle = {
-        color: '#537A5A',
+        color: '#333333',
         display: 'flex',
         alignItems: 'center',
         marginLeft: '-1%',
@@ -54,10 +59,16 @@ const Header = ({ data }) => {
             </div>
             <div className="header-button">
                 <div style={buttonContainerStyle}>
-                    <IconButton style={buttonStyle} onClick={handleRefreshClick}>
+                    <IconButton
+                        sx={buttonStyle}
+                        onClick={handleRefreshClick}
+                    >
                         <RefreshRoundedIcon />
                     </IconButton>
-                    <IconButton style={buttonStyle} onClick={handleInfoClick}>
+                    <IconButton
+                        sx={buttonStyle}
+                        onClick={handleInfoClick}
+                    >
                         <QuestionMarkRoundedIcon />
                     </IconButton>
                 </div>

@@ -43,13 +43,13 @@ const PlotDisplay = () => {
         segments,
         customSegmentLabels: Array(segments).fill({}),
         segmentColors,
-        textColor: '#537A5A',
+        textColor: '#91A799',
     });
 
     return (
         <div className="plot-display-content">
             <div className="sensor-name">
-                <h1 style={{ textAlign: 'center' }}>Air Sensors {data.temperature.timestamp}</h1>
+                <h1 style={{ textAlign: 'center' }}>Test House Data {data.temperature.timestamp}</h1>
             </div>
             <div className="gauge-container">
                 <div className="gauge-item temp">
