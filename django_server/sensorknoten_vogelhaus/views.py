@@ -48,6 +48,7 @@ def get_location(request, location_name: str):
         for mp in measured_params:
             sv = SensorValue.objects.filter(measuredParameter=mp).latest('created_at')
             data[mp.parameter.name] = {
+                'id': mp.id,
                 'timestamp': sv.created_at,
                 'value': sv.value,
                 'min': mp.parameter.min,
@@ -59,6 +60,15 @@ def get_location(request, location_name: str):
 
 @api_view(['GET'])
 def get_measured_parameter_details(request, measured_parameter_id: str):
-    measured_parameter = MeasuredParameter.objects.select_related().get(id=measured_parameter_id)
-    return Response(measured_parameter)
+    mp = MeasuredParameter.objects.select_related('parameter', 'sensor').get(id=measured_parameter_id)
+    values = SensorValue.objects.filter(measuredParameter=mp).all()  # how many is max count?
+    data = {
+        'name': mp.parameter.name,
+        'sensor': mp.sensor.name,
+        'parameter_description': mp.parameter.description,
+        'sensor_description': mp.sensor.description,
+        'values': [{'timestamp': v.created_at, 'value': v.value} for v in values]
+    }
+
+    return Response(data)
 
